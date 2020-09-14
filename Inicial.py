@@ -22,4 +22,6 @@ print("El área del rectángulo es:",Ar)
 #PRUEBA
 #PRUEBA2
 #desplegar calculo funcion 2
+p = l2+l2+l1+l1
+print(p)
 
