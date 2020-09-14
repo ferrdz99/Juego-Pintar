@@ -17,7 +17,8 @@ print("medida de un lado del rectángulo")
 l2 = float(input())
 
 #desplegar calculo funcion1
-
+Ar=l1*l2
+print("El área del rectángulo es:",Ar)
 #PRUEBA
 #PRUEBA2
 #desplegar calculo funcion 2
