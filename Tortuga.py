@@ -24,13 +24,11 @@ def square(start, end):
 
 def circle(start, end):
     "Draw circle from start to end."
-    tap(start.x, start.y)
+    tap(x, y)
     r=tap()
-    goto(start.y)
+    goto(end.x - end.y)
     circle(r)
-    begin_fill()
-    goto(end.y)
-    end_fill()
+  
 
     
 
