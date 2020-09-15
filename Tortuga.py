@@ -24,16 +24,14 @@ def square(start, end):
 
 def circle(start, end):
     "Draw circle from start to end."
-
-    up()
-    goto(start.x, start.y)
-    down()
+    tap(start.x, start.y)
+    r=tap()
+    goto(start.y)
+    circle(r)
     begin_fill()
-    p=pos()
-    import math
-    RAD=math.sqrt((end.x-start.x)**2+(end.y-start.y)**2)
-    circle(RAD)
-    #end_fill()
+    goto(end.y)
+    end_fill()
+
     
 
 def rectangle(start, end):
@@ -95,7 +93,7 @@ onkey(lambda: color('green'), 'G')
 onkey(lambda: color('blue'), 'B')
 onkey(lambda: color('red'), 'R')
 onkey(lambda: color('green'), 'G')
-
+onkey(lambda: color('magenta'), 'M')
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
 onkey(lambda: store('shape', circle), 'c')
