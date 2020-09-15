@@ -4,7 +4,6 @@ from freegames import vector
 def line(start, end):
     "Draw line from start to end."
     up()
-    color("magenta")
     goto(start.x, start.y)
     down()
     goto(end.x, end.y)
@@ -22,16 +21,17 @@ def square(start, end):
 
     end_fill()
 
-def circle(start, end):
+def circle2(start, end):
     "Draw circle from start to end."
-    tap(x, y)
-    r=tap()
-    goto(end.x - end.y)
+    up()
+    goto(start.x, start.y)
+    r=((start.x-end.x)**2+(start.y-end.y)**2)**(1/2)
+    down()
     circle(r)
-  
+    begin_fill()
+    end_fill()
 
     
-
 def rectangle(start, end):
     "Draw rectangle from start to end."
     up()
@@ -74,7 +74,7 @@ def tap(x, y):
         end = vector(x, y)
         shape(start, end)
         state['start'] = None
-        width(8)
+        width(4)
 
 def store(key, value):
     "Store value in state at key."
@@ -94,7 +94,7 @@ onkey(lambda: color('green'), 'G')
 onkey(lambda: color('magenta'), 'M')
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
-onkey(lambda: store('shape', circle), 'c')
+onkey(lambda: store('shape', circle2), 'c')
 onkey(lambda: store('shape', rectangle), 'r')
 onkey(lambda: store('shape', triangle), 't')
 done()
